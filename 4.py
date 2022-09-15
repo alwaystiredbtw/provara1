@@ -17,15 +17,16 @@ def menu():
     return operacao
 def saque():
     global saldo
-    valorS = float(input("Qual o valor do saque que deseja realizar?"))
     if saldo == 0.0:
         print("Voce nao tem saldo, impossivel realizar saque!")
-    if saldo < valorS:
-        print(f"Seu saldo eh de apenas R${saldo}, nao eh possivel realizar saque")
-    if saldo > valorS:
-        saldo -= valorS
-        print(f"Realizando saque de R${valorS} !")
-        print(f"Seu novo saldo eh {saldo}")
+    if saldo != 0.0:
+        valorS = float(input("Qual o valor do saque que deseja realizar?"))
+        if saldo < valorS:
+            print(f"Seu saldo eh de apenas R${saldo}, nao eh possivel realizar saque")
+        if saldo >= valorS:
+            saldo -= valorS
+            print(f"Realizando saque de R${valorS} !")
+            print(f"Seu novo saldo eh {saldo}")
 def deposito():
     global saldo
     global valorD
